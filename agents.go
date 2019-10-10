@@ -58,9 +58,8 @@ func minMaxScore(board Board, playerToMove int, playerToOptimize int) int {
 	if winner != 0 {
 		if winner == playerToOptimize+1 {
 			return 10
-		} else {
-			return -10
 		}
+		return -10
 
 	} else if board.IsFull() {
 		return 0
@@ -82,8 +81,6 @@ func minMaxScore(board Board, playerToMove int, playerToOptimize int) int {
 
 	if playerToMove == playerToOptimize {
 		return scores[len(scores)-1]
-	} else {
-		return scores[0]
 	}
-
+	return scores[0]
 }
